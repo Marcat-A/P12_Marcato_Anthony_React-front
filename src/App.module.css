@@ -1,0 +1,25 @@
+.App {
+  overflow: hidden;
+}
+.container {
+  margin: 68px 4rem 0 224px;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.title > span {
+  color: #ff0101;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.mainContent {
+  display: flex;
+  justify-content: space-between;
+}
