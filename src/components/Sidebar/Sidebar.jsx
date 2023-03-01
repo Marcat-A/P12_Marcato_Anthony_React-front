@@ -15,9 +15,9 @@ const Sidebar = () => {
     <div className={css.sidebar}>
       <div></div>
       <ul className={css.icons}>
-        {links.map((link) => {
+        {links.map((link, i) => {
           return (
-            <li className={css.icon}>
+            <li className={css.icon} key={i}>
               <a href={link.path}>
                 <img src={link.img} alt={link.name} />
               </a>

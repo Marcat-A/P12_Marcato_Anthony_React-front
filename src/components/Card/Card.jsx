@@ -1,5 +1,6 @@
 import React from "react";
 import css from "./Card.module.css";
+import PropTypes from "prop-types";
 
 const Card = ({ icon, color, text, data }) => {
   return (
@@ -13,6 +14,13 @@ const Card = ({ icon, color, text, data }) => {
       </div>
     </div>
   );
+};
+
+Card.propTypes = {
+  color: PropTypes.string,
+  icon: PropTypes.string,
+  text: PropTypes.string,
+  data: PropTypes.string,
 };
 
 export default Card;

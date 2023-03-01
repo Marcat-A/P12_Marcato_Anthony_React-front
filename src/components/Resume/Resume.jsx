@@ -5,9 +5,9 @@ import energy from "../../assets/energy.svg";
 import chicken from "../../assets/chicken.svg";
 import apple from "../../assets/apple.svg";
 import cheeseburger from "../../assets/cheeseburger.svg";
+import Proptypes from "prop-types";
 
 const Resume = ({ data }) => {
-  console.log(data.keyData);
   const calories = data.keyData.calorieCount / 1000;
   const proteines = data.keyData.proteinCount;
   const lipides = data.keyData.lipidCount;
@@ -40,6 +40,10 @@ const Resume = ({ data }) => {
       />
     </div>
   );
+};
+
+Resume.propTypes = {
+  data: Proptypes.object,
 };
 
 export default Resume;

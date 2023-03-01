@@ -16,9 +16,9 @@ const Navbar = () => {
         <img src={logo} alt="Logo de l'entreprise" />
       </div>
       <ul className={css.links}>
-        {links.map((link) => {
+        {links.map((link, i) => {
           return (
-            <li>
+            <li key={i}>
               <a href={link.path} className={css.link}>
                 {link.name}
               </a>
