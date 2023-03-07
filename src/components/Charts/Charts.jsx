@@ -1,7 +1,7 @@
 import React from "react";
 import ActivityChart from "../ActivityChart/ActivityChart";
 import JaugeChart from "../JaugeChart/JaugeChart";
-import RadarChart from "../RadarChart/RadarChart";
+import Performances from "../RadarChart/Performances";
 import TempChart from "../TempChart/TempChart";
 import css from "./Charts.module.css";
 
@@ -14,7 +14,7 @@ const Charts = ({ data }) => {
       <ActivityChart data={usersActivity} />
       <div className={css.secondContainer}>
         <TempChart data={usersAverageSessions} />
-        <RadarChart />
+        <Performances data={usersPerformance} />
         <JaugeChart />
       </div>
     </div>

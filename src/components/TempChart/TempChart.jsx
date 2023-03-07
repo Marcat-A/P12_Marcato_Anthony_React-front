@@ -10,7 +10,6 @@ import {
 } from "recharts";
 
 const TempChart = ({ data }) => {
-  console.log(data[1].sessions);
   return (
     <div className={css.container}>
       <h2 className={css.title}>Durée moyenne des sessions</h2>

@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+  width: 260px;
+  height: 260px;
+  background-color: #282d30;
+  position: relative;
+  border-radius: 5px;
+}
