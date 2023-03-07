@@ -20,7 +20,7 @@ const Performances = ({ data }) => {
   return (
     <div className={css.container}>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius={70} cx="50%" cy="50%" data={refactoredDatas}>
+        <RadarChart outerRadius={90} cx="50%" cy="50%" data={refactoredDatas}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey="subject"

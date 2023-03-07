@@ -15,7 +15,7 @@ const Charts = ({ data }) => {
       <div className={css.secondContainer}>
         <TempChart data={usersAverageSessions} />
         <Performances data={usersPerformance} />
-        <JaugeChart />
+        <JaugeChart data={usersData} />
       </div>
     </div>
   );

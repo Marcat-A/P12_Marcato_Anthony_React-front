@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  width: 260px;
+  height: 260px;
+  background-color: #fbfbfb;
+  position: relative;
+  border-radius: 5px;
+}
+
+.title {
+  display: flex;
+  position: absolute;
+  padding: 2rem;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.score {
+  display: flex;
+  width: 100%;
+  padding-inline: 80px;
+  height: 100%;
+  flex-direction: column;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  font-weight: 700;
+  font-size: 26px;
+  color: #282d30;
+}
+
+.score > span {
+  font-size: 16px;
+  color: #74798c;
+}
