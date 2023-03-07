@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  width: 260px;
+  height: 260px;
+  background-color: #ff0000;
+  position: relative;
+  border-radius: 5px;
+}
+
+.customTooltip {
+  background-color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.title {
+  position: absolute;
+  width: 50%;
+  top: 1rem;
+  left: 2rem;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+}

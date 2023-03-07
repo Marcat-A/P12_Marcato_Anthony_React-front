@@ -7,6 +7,7 @@ import Resume from "./components/Resume/Resume";
 import data from "../src/__mocks__/mockData";
 
 function App() {
+  console.log(data);
   return (
     <div className={css.App}>
       <Navbar />
@@ -21,7 +22,7 @@ function App() {
           </h2>
         </div>
         <div className={css.mainContent}>
-          <Charts />
+          <Charts data={data} />
           <Resume data={data.usersData[1]} />
         </div>
       </main>
