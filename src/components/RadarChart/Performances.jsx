@@ -10,7 +10,6 @@ import css from "./Performances.module.css";
 import Proptypes from "prop-types";
 
 const Performances = ({ data }) => {
-  console.log(data);
   const refactoredDatas = [
     {
       subject: "Intensité",

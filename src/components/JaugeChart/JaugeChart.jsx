@@ -4,10 +4,21 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import Proptypes from "prop-types";
 
 const JaugeChart = ({ data }) => {
-  console.log(data);
   const refactoredData = [
-    { value: data?.score ? data.score : 1 },
-    { value: 1 - data?.score ? data.score : 1 },
+    {
+      value: data?.score
+        ? data.score
+        : data?.todayScore
+        ? data.todayScore
+        : null,
+    },
+    {
+      value: data?.score
+        ? 1 - data.score
+        : data?.todayScore
+        ? 1 - data.todayScore
+        : null,
+    },
   ];
   return data !== [] ? (
     <div className={css.container}>
@@ -22,8 +33,10 @@ const JaugeChart = ({ data }) => {
             paddingAngle={5}
             dataKey="value"
             innerRadius={70}
+            domain={[0, 1]}
             outerRadius={80}
             startAngle={90}
+            endAngle={450}
           >
             <Cell className="cell" fill={"#ff0101"} cornerRadius="50%" />
             <Cell
