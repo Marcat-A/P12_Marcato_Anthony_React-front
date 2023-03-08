@@ -8,7 +8,7 @@ Use [node](https://nodejs.org/en/) for installing the project.
 
 Install the backend here and follow the instructions :
 
-[> Backend <]("https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard")
+[> Backend <](https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
 
 Open a terminal and type this commands : 
 
@@ -41,13 +41,13 @@ It will launch the frontend on port 3000 by default. You can write 'y' if needed
 
 ## Dependencies
 
-This project is created with : [React v18.2.0]("https://fr.reactjs.org/")
+This project is created with : [React v18.2.0](https://fr.reactjs.org/)
 
-We use [Axios v1.3.4]("https://axios-http.com/fr/docs/intro") for fetching the datas from the backend
+We use [Axios v1.3.4](https://axios-http.com/fr/docs/intro) for fetching the datas from the backend
 
-We use [Prop-Types v15.8.1]("https://reactjs.org/docs/typechecking-with-proptypes.html") for typechecking the variables.
+We use [Prop-Types v15.8.1](https://reactjs.org/docs/typechecking-with-proptypes.html) for typechecking the variables.
 
-We use [Recharts v2.4.3]("https://recharts.org/en-US/") for create the differents charts.
+We use [Recharts v2.4.3](https://recharts.org/en-US/) for create the differents charts.
 
 ### THAT'S ALL !
 
