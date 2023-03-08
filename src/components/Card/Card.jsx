@@ -2,6 +2,14 @@ import React from "react";
 import css from "./Card.module.css";
 import PropTypes from "prop-types";
 
+/**
+ *
+ * @param {HTMLImageElement} icon Image fetched from Resume
+ * @param {String} color Color fetched from the component in Resume
+ * @param {String} text text fetched from the component in Resume
+ * @param {String} data data fetched from the component in Resume
+ * @returns
+ */
 const Card = ({ icon, color, text, data }) => {
   return (
     <div className={css.container}>

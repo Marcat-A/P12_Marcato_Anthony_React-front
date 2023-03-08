@@ -8,6 +8,12 @@ import cheeseburger from "../../assets/cheeseburger.svg";
 import Proptypes from "prop-types";
 
 const Resume = ({ data }) => {
+  /**
+   * @param {Number} calories Retrieve the amount of calories from the datas then format them, default 1
+   * @param {Number} proteines Retrieve the amount of proteines from the datas, default 1
+   * @param {Number} lipides Retrieve the amount of lipides from the datas, default 1
+   * @param {Number} glucides Retrieve the amount of glucides from the datas, default 1
+   */
   let calories = data ? data.calorieCount / 1000 : 1;
   let proteines = data ? data.proteinCount : 1;
   let lipides = data ? data.lipidCount : 1;

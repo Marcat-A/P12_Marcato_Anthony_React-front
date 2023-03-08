@@ -10,6 +10,11 @@ import css from "./Performances.module.css";
 import Proptypes from "prop-types";
 
 const Performances = ({ data }) => {
+  /**
+   *
+   * @param {String} subject // Name of each corner
+   * @param {Number} perf // Statistics retrieval for each subject, default on 1
+   */
   const refactoredDatas = [
     {
       subject: "Intensité",

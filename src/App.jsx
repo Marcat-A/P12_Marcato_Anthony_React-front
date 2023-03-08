@@ -13,6 +13,13 @@ import {
 import { useEffect, useState } from "react";
 
 function App() {
+  /**
+   * @param {string} id Devs only, for testing the differents chars, 12 or 18 implemented
+   * @param {Array.<Object>} user Used for saving the datas from the API fetching the user
+   * @param {Array.<Object>} activity Used for saving the datas from the API fetching the activitys of the user
+   * @param {Array.<Object>} sessions Used for saving the datas from the API fetching the sessions of the user
+   * @param {Array.<Object>} performances Used for saving the datas from the API fetching the performances of the user
+   */
   let id = "18";
   const [user, setUser] = useState([{}]);
   const [activity, setActivity] = useState([{}]);

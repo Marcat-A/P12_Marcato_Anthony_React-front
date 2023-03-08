@@ -4,6 +4,9 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import Proptypes from "prop-types";
 
 const JaugeChart = ({ data }) => {
+  /**
+   * @param {Number} value Statistic retrieval for the score value if it exists, else null
+   */
   const refactoredData = [
     {
       value: data?.score
@@ -68,6 +71,7 @@ JaugeChart.propTypes = {
       proteinCount: Proptypes.number,
     }),
     score: Proptypes.number,
+    todayScore: Proptypes.number,
     userInfos: Proptypes.object,
   }),
 };
