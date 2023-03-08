@@ -51,4 +51,8 @@ We use [Recharts v2.4.3](https://recharts.org/en-US/) for create the differents 
 
 ### THAT'S ALL !
 
+
+If needed, you can also see the project using the data mocked by cloning the merge "piechart ok" [4ab389a](https://github.com/Marcat-A/P12_Marcato_Anthony_React-front/commit/4ab389ad5b4b99bc4a400310d80f14acfb6a3ed3)
+
+
 Enjoy :)
