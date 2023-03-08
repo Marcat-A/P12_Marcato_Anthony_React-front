@@ -2,6 +2,14 @@
 
 ## Installation
 
+
+Use [node](https://nodejs.org/en/) for installing the project. 
+
+
+Install the backend here and follow the instructions :
+
+[> Backend <]("https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard")
+
 Open a terminal and type this commands : 
 
 ```bash
