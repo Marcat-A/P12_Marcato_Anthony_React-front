@@ -8,11 +8,12 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import Proptypes from "prop-types";
 
 import css from "./ActivityChart.module.css";
 
 export default function ActivityChart({ data }) {
-  return (
+  return data !== [] ? (
     <div className={css.container}>
       <div className={css.text}>
         <h2 className={css.title}>Activité quotidienne</h2>
@@ -31,7 +32,7 @@ export default function ActivityChart({ data }) {
             left: 0,
           }}
           legendType="circle"
-          data={data[1].sessions}
+          data={data?.sessions}
           barGap={8}
         >
           <CartesianGrid vertical={false} strokeDasharray="3 3" />
@@ -84,8 +85,17 @@ export default function ActivityChart({ data }) {
         </BarChart>
       </ResponsiveContainer>
     </div>
+  ) : (
+    ""
   );
 }
+
+ActivityChart.propTypes = {
+  data: Proptypes.shape({
+    userId: Proptypes.number,
+    sessions: Proptypes.oneOfType([Proptypes.array, Proptypes.object]),
+  }),
+};
 
 const CustomToolTip = ({ active, payload, label }) => {
   if (active && payload) {

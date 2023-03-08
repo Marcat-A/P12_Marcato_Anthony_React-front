@@ -4,21 +4,26 @@ import JaugeChart from "../JaugeChart/JaugeChart";
 import Performances from "../RadarChart/Performances";
 import TempChart from "../TempChart/TempChart";
 import css from "./Charts.module.css";
+import Proptypes from "prop-types";
 
-const Charts = ({ data }) => {
-  const { usersActivity, usersAverageSessions, usersData, usersPerformance } =
-    data;
-
+const Charts = ({ user, activity, sessions, performances }) => {
   return (
     <div className={css.container}>
-      <ActivityChart data={usersActivity} />
+      <ActivityChart data={activity?.data} />
       <div className={css.secondContainer}>
-        <TempChart data={usersAverageSessions} />
-        <Performances data={usersPerformance} />
-        <JaugeChart data={usersData} />
+        <TempChart data={sessions?.data} />
+        <Performances data={performances?.data} />
+        <JaugeChart data={user?.data} />
       </div>
     </div>
   );
+};
+
+Charts.propTypes = {
+  user: Proptypes.oneOfType([Proptypes.array, Proptypes.object]),
+  activity: Proptypes.oneOfType([Proptypes.array, Proptypes.object]),
+  sessions: Proptypes.oneOfType([Proptypes.array, Proptypes.object]),
+  performances: Proptypes.oneOfType([Proptypes.array, Proptypes.object]),
 };
 
 export default Charts;

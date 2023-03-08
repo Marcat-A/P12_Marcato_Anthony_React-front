@@ -7,17 +7,25 @@ import {
   Radar,
 } from "recharts";
 import css from "./Performances.module.css";
+import Proptypes from "prop-types";
 
 const Performances = ({ data }) => {
+  console.log(data);
   const refactoredDatas = [
-    { subject: "Intensité", perf: data[1].data[5].value },
-    { subject: "Vitesse", perf: data[1].data[4].value },
-    { subject: "Force", perf: data[1].data[3].value },
-    { subject: "Endurance", perf: data[1].data[2].value },
-    { subject: "Energie", perf: data[1].data[1].value },
-    { subject: "Cardio", perf: data[1].data[0].value },
+    {
+      subject: "Intensité",
+      perf: data?.data[5].value ? data.data[5].value : 1,
+    },
+    { subject: "Vitesse", perf: data?.data[4].value ? data.data[4].value : 1 },
+    { subject: "Force", perf: data?.data[3].value ? data.data[3].value : 1 },
+    {
+      subject: "Endurance",
+      perf: data?.data[2].value ? data.data[2].value : 1,
+    },
+    { subject: "Energie", perf: data?.data[1].value ? data.data[1].value : 1 },
+    { subject: "Cardio", perf: data?.data[0].value ? data.data[0].value : 1 },
   ];
-  return (
+  return data !== [] ? (
     <div className={css.container}>
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart outerRadius={90} cx="50%" cy="50%" data={refactoredDatas}>
@@ -36,7 +44,17 @@ const Performances = ({ data }) => {
         </RadarChart>
       </ResponsiveContainer>
     </div>
+  ) : (
+    ""
   );
+};
+
+Performances.propTypes = {
+  data: Proptypes.shape({
+    userId: Proptypes.number,
+    data: Proptypes.oneOfType([Proptypes.array, Proptypes.object]),
+    kind: Proptypes.object,
+  }),
 };
 
 export default Performances;

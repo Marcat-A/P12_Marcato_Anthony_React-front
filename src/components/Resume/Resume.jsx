@@ -8,10 +8,10 @@ import cheeseburger from "../../assets/cheeseburger.svg";
 import Proptypes from "prop-types";
 
 const Resume = ({ data }) => {
-  const calories = data.keyData.calorieCount / 1000;
-  const proteines = data.keyData.proteinCount;
-  const lipides = data.keyData.lipidCount;
-  const glucides = data.keyData.carbohydrateCount;
+  let calories = data ? data.calorieCount / 1000 : 1;
+  let proteines = data ? data.proteinCount : 1;
+  let lipides = data ? data.lipidCount : 1;
+  let glucides = data ? data.carbohydrateCount : 1;
   return (
     <div className={css.container}>
       <Card

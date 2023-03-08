@@ -8,14 +8,15 @@ import {
   YAxis,
   XAxis,
 } from "recharts";
+import Proptypes from "prop-types";
 
 const TempChart = ({ data }) => {
-  return (
+  return data !== [] ? (
     <div className={css.container}>
       <h2 className={css.title}>Durée moyenne des sessions</h2>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
-          data={data[1].sessions}
+          data={data?.sessions}
           margin={{
             top: 5,
             right: 30,
@@ -50,7 +51,16 @@ const TempChart = ({ data }) => {
         </LineChart>
       </ResponsiveContainer>
     </div>
+  ) : (
+    ""
   );
+};
+
+TempChart.propTypes = {
+  data: Proptypes.shape({
+    userId: Proptypes.number,
+    sessions: Proptypes.oneOfType([Proptypes.array, Proptypes.object]),
+  }),
 };
 
 const CustomTooltip = ({ active, payload, label }) => {
