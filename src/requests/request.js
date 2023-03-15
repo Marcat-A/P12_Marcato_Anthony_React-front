@@ -1,4 +1,10 @@
 import axios from "axios";
+import {
+  usersData,
+  usersActivity,
+  usersSessions,
+  usersPerformances,
+} from "../__mocks__/mockData";
 
 /**
  *
@@ -12,6 +18,7 @@ export const userRequest = async (setUser, id) => {
     .get(`${route}/user/${id}`)
     .then((res) => {
       setUser(res.data);
+      console.log(res.data, usersData);
     })
     .catch((err) => {
       console.log(err);
@@ -70,4 +77,31 @@ export const userPerformance = async (setPerformances, id) => {
     .catch((err) => {
       console.log(err);
     });
+};
+
+export const mockedUserRequest = (setUser, id) => {
+  let user = usersData.find((user) => {
+    return user.data.id == id;
+  });
+  setUser(user);
+};
+
+export const mockedUserActivity = (setActivity, id) => {
+  let activity = usersActivity.find((activity) => {
+    return activity.data.userId == id;
+  });
+  setActivity(activity);
+};
+
+export const mockedUserSessions = (setSessions, id) => {
+  let session = usersSessions.find((session) => {
+    return session.data.userId == id;
+  });
+  setSessions(session);
+};
+export const mockedUserPerformances = (setPerformances, id) => {
+  let performance = usersPerformances.find((performance) => {
+    return performance.data.userId == id;
+  });
+  setPerformances(performance);
 };

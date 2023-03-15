@@ -23,3 +23,46 @@
   display: flex;
   justify-content: space-between;
 }
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.id,
+.mocked {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  display: flex;
+  width: 250px;
+  height: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.btn.active {
+  background-color: red;
+  color: #ffffffff;
+  transform: scale(1.1);
+}
+
+.validBtn {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
