@@ -14,6 +14,12 @@ import {
   mockedUserPerformances,
 } from "./requests/request";
 import { useEffect, useState } from "react";
+import {
+  modeledUser,
+  modeledActivity,
+  modeledPerformances,
+  modeledSessions,
+} from "./__mocks__/modeledDatas";
 
 function App() {
   /**
@@ -25,26 +31,51 @@ function App() {
    * @param {Array.<Object>} sessions Used for saving the datas from the API fetching the sessions of the user
    * @param {Array.<Object>} performances Used for saving the datas from the API fetching the performances of the user
    */
-  const [id, setId] = useState("12");
-  const [mocked, setMocked] = useState(true);
+  const [id, setId] = useState("1");
+  const [mocked, setMocked] = useState(null);
   const [user, setUser] = useState([{}]);
   const [activity, setActivity] = useState([{}]);
   const [sessions, setSessions] = useState([{}]);
   const [performances, setPerformances] = useState([{}]);
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState();
+
+  const setDefaultDatas = () => {
+    setUser(modeledUser);
+    console.log(" >> Default User <<");
+    console.log(user);
+    setActivity(modeledActivity);
+    setSessions(modeledSessions);
+    setPerformances(modeledPerformances);
+  };
+
+  const setMockedDatas = () => {
+    mockedUserRequest(setUser, id);
+    console.log(" >> Mocked User !! << ");
+    console.log(user);
+    mockedUserActivity(setActivity, id);
+    mockedUserSessions(setSessions, id);
+    mockedUserPerformances(setPerformances, id);
+  };
+
+  const setApiDatas = () => {
+    userRequest(setUser, id);
+    console.log(" >> User from the API !! << ");
+    console.log(user);
+    userActivity(setActivity, id);
+    userSessions(setSessions, id);
+    userPerformance(setPerformances, id);
+  };
+
   useEffect(() => {
     if (mocked === false) {
-      userRequest(setUser, id);
-      userActivity(setActivity, id);
-      userSessions(setSessions, id);
-      userPerformance(setPerformances, id);
+      setApiDatas();
+    } else if (mocked === true) {
+      setMockedDatas();
     } else {
-      mockedUserRequest(setUser, id);
-      mockedUserActivity(setActivity, id);
-      mockedUserSessions(setSessions, id);
-      mockedUserPerformances(setPerformances, id);
+      setDefaultDatas();
     }
   }, [id]);
+
   return selected ? (
     <div className={css.App}>
       <Navbar />
@@ -72,6 +103,25 @@ function App() {
     </div>
   ) : (
     <div className={css.loader}>
+      <h2>Choose the datas you want to use</h2>
+      <div className={css.mocked}>
+        <button
+          onClick={() => setMocked(true)}
+          className={
+            mocked === true ? `${css.btn} ${css.active}` : `${css.btn}`
+          }
+        >
+          Use the mocked datas
+        </button>
+        <button
+          onClick={() => setMocked(false)}
+          className={
+            mocked === false ? `${css.btn} ${css.active}` : `${css.btn}`
+          }
+        >
+          Use the backend
+        </button>
+      </div>
       <h2>Choose the id you want to test</h2>
       <div className={css.id}>
         <button
@@ -85,21 +135,6 @@ function App() {
           className={id === "18" ? `${css.btn} ${css.active}` : `${css.btn}`}
         >
           18
-        </button>
-      </div>
-      <h2>Choose the datas you want to use</h2>
-      <div className={css.mocked}>
-        <button
-          onClick={() => setMocked(true)}
-          className={mocked ? `${css.btn} ${css.active}` : `${css.btn}`}
-        >
-          Use the mocked datas
-        </button>
-        <button
-          onClick={() => setMocked(false)}
-          className={!mocked ? `${css.btn} ${css.active}` : `${css.btn}`}
-        >
-          Use the backend
         </button>
       </div>
       <div className={css.valid}>

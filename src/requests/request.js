@@ -18,7 +18,6 @@ export const userRequest = async (setUser, id) => {
     .get(`${route}/user/${id}`)
     .then((res) => {
       setUser(res.data);
-      console.log(res.data, usersData);
     })
     .catch((err) => {
       console.log(err);
