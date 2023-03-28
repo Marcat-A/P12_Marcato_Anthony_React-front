@@ -31,7 +31,7 @@ const JaugeChart = ({ data }) => {
           <Pie
             data={refactoredData}
             cx={"50%"}
-            cy={"60%"}
+            cy={"55%"}
             fill="#ff0000"
             paddingAngle={5}
             dataKey="value"

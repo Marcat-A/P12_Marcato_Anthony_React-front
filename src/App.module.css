@@ -66,3 +66,15 @@
   margin-top: 2rem;
   font-size: 1.1rem;
 }
+
+.error {
+  display: flex;
+  margin-top: 1rem;
+  color: red;
+}
+
+@media screen and (max-width: 1339px) {
+  .container {
+    margin: 20px 4rem 0 160px;
+  }
+}

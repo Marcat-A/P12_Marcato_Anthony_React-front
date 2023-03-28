@@ -33,3 +33,21 @@
   font-size: 16px;
   color: #74798c;
 }
+
+@media screen and (max-width: 1339px) {
+  .container {
+    width: 180px;
+    height: 180px;
+  }
+  .title {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+  .score {
+    top: 40%;
+    font-size: 16px;
+  }
+  .score > span {
+    font-size: 12px;
+  }
+}

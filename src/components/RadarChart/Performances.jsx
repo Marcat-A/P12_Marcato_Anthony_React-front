@@ -32,7 +32,7 @@ const Performances = ({ data }) => {
   return data !== [] ? (
     <div className={css.container}>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart outerRadius={90} cx="50%" cy="50%" data={refactoredDatas}>
+        <RadarChart outerRadius="60%" cx="50%" cy="50%" data={refactoredDatas}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis
             dataKey="subject"
@@ -40,7 +40,7 @@ const Performances = ({ data }) => {
             dy={4}
             tickLine={false}
             tick={{
-              fontSize: 12,
+              fontSize: 10,
               fontWeight: 500,
             }}
           />

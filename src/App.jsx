@@ -26,6 +26,7 @@ function App() {
    * @param {String} id Devs only, for testing the differents chars, 12 or 18 implemented
    * @param {Boolean} mocked Devs only, for testing the difference between mockedDatas or DB
    * @param {Boolean} selected Devs only, for testing the difference between mockedDatas or DB
+   * @param {Boolean} error Catch an error
    * @param {Array.<Object>} user Used for saving the datas from the API fetching the user
    * @param {Array.<Object>} activity Used for saving the datas from the API fetching the activitys of the user
    * @param {Array.<Object>} sessions Used for saving the datas from the API fetching the sessions of the user
@@ -38,32 +39,30 @@ function App() {
   const [sessions, setSessions] = useState([{}]);
   const [performances, setPerformances] = useState([{}]);
   const [selected, setSelected] = useState();
+  const [error, setError] = useState(false);
 
   const setDefaultDatas = () => {
     setUser(modeledUser);
     console.log(" >> Default User <<");
-    console.log(user);
     setActivity(modeledActivity);
     setSessions(modeledSessions);
     setPerformances(modeledPerformances);
   };
 
   const setMockedDatas = () => {
-    mockedUserRequest(setUser, id);
+    mockedUserRequest(setUser, id, setError);
     console.log(" >> Mocked User !! << ");
-    console.log(user);
-    mockedUserActivity(setActivity, id);
-    mockedUserSessions(setSessions, id);
-    mockedUserPerformances(setPerformances, id);
+    mockedUserActivity(setActivity, id, setError);
+    mockedUserSessions(setSessions, id, setError);
+    mockedUserPerformances(setPerformances, id, setError);
   };
 
   const setApiDatas = () => {
-    userRequest(setUser, id);
+    userRequest(setUser, id, setError);
     console.log(" >> User from the API !! << ");
-    console.log(user);
-    userActivity(setActivity, id);
-    userSessions(setSessions, id);
-    userPerformance(setPerformances, id);
+    userActivity(setActivity, id, setError);
+    userSessions(setSessions, id, setError);
+    userPerformance(setPerformances, id, setError);
   };
 
   useEffect(() => {
@@ -141,9 +140,11 @@ function App() {
         <button
           className={`${css.btn} ${css.validBtn}`}
           onClick={() => setSelected(true)}
+          disabled={error}
         >
           Use this configuration !
         </button>
+        <span id="error" className={css.error}></span>
       </div>
     </div>
   );
